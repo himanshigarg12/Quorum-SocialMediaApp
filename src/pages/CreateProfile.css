@@ -1,0 +1,302 @@
+/* =====================================
+   CREATE PROFILE PAGE FIXED LAYOUT (SCROLL FIX)
+===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; /* allow vertical scroll */
+}
+
+.create-profile-page {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh; /* allow flexible height */
+  background: #f9f9f9;
+  overflow-y: auto; /* ✅ enable scrolling */
+}
+
+.create-profile-page .container {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* ================= LEFT PANEL ================= */
+.left-panel {
+  flex: 0 0 50%;
+  background: linear-gradient(135deg, #d9534f, #d76d77, #d84e4e);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.left-panel .logo img {
+  width: 90px;
+  margin-bottom: 25px;
+}
+
+.left-panel h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.left-panel p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* ================= RIGHT PANEL ================= */
+.right-panel {
+  flex: 0 0 50%;
+  background: #ffffff;
+  padding: 50px 60px;
+  overflow-y: auto; /* ✅ scrolls properly */
+  min-height: 100vh; /* ✅ content grows beyond viewport */
+  height: auto;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #d9534f;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+/* ================= PROFILE PICTURE ================= */
+.profile-picture {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 2px dashed #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  border-color: #d9534f;
+  box-shadow: 0 0 10px rgba(217, 83, 79, 0.3);
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: none;
+}
+.profile-picture {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.upload-photo-text:hover {
+  text-decoration: underline;
+}
+
+/* Camera icon placeholder */
+.camera-icon {
+  font-size: 24px;
+  color: #777;
+}
+
+.profile-img.uploaded img {
+  display: block;
+}
+
+.profile-img.uploaded .camera-icon {
+  display: none;
+}
+
+.upload-text h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.upload-text p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.upload-text span {
+  color: #d9534f;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #d9534f;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ================= BUTTONS ================= */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn {
+  flex: 1;
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #c74743;
+}
+
+.skip-btn {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #555;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.skip-btn:hover {
+  border-color: #d9534f;
+  color: #d9534f;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .create-profile-page,
+  .create-profile-page .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .right-panel {
+    padding: 30px 25px;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+/* ================= INTERESTS ================= */
+.popular-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.interest-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.interest-label {
+  background: #f0f2f5;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interest-label:hover {
+  background: #d9534f;
+  color: #fff;
+}
+
+.interest-checkbox:checked + .interest-label {
+  background: #d9534f;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(217, 83, 79, 0.3);
+}

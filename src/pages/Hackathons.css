@@ -1,0 +1,164 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+}
+
+.hackathons-main {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.hackathon-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+.h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.muted {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn,
+.btn-outline,
+.btn-delete {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #d9534f;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background: #d9534f;
+  color: white;
+}
+
+.btn:hover {
+  background: #b52a27;
+}
+
+.btn-outline {
+  background: white;
+  color: #d9534f;
+}
+
+.btn-outline:hover {
+  background: #d9534f;
+  color: white;
+}
+
+.btn-delete {
+  background: #fff0f0;
+  color: #c9302c;
+  border: 1px solid #c9302c;
+}
+
+.btn-delete:hover {
+  background: #c9302c;
+  color: white;
+}
+
+/* Grid and Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 14px;
+  margin: 1rem 0;
+}
+
+.meta dt {
+  font-weight: 700;
+  color: #222;
+}
+
+.meta dd {
+  margin: 0;
+  color: #444;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Empty Text */
+.empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1rem;
+  color: #777;
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hackathon-wrapper {
+    padding: 1.5rem;
+  }
+  .h1 {
+    font-size: 1.7rem;
+  }
+  .meta {
+    grid-template-columns: 1fr;
+  }
+}

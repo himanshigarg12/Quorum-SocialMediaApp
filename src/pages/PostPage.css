@@ -1,0 +1,356 @@
+:root {
+  --primary-red: #d9534f;
+  --dark-red: #c9302c;
+  --light-red: #f8d7da;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e9ecef;
+  --text-dark: #333;
+  --text-light: #666;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--light-gray);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background: var(--primary-red);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ICONS (same as original HTML) */
+.icon-feed {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2zm0 15a2 2 0 100-4 2 2 0 000 4z'/%3E%3C/svg%3E");
+}
+.icon-profile {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-6.6 0-12 5.4-12 12h24c0-6.6-5.4-12-12-12z'/%3E%3C/svg%3E");
+}
+.icon-chat {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M4 2h16a2 2 0 012 2v14l-4-4H4a2 2 0 01-2-2V4a2 2 0 012-2z'/%3E%3C/svg%3E");
+}
+.icon-events {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z'/%3E%3C/svg%3E");
+}
+.icon-polls {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M3 3h18v18H3V3zm2 2v14h14V5H5zm8 2h2v10h-2V7zm-4 3h2v7H9v-7zm-2 2H7v5H5v-5z'/%3E%3C/svg%3E");
+}
+.icon-hackathon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 15l-5-5 1.4-1.4L11 14.2l7.6-7.6L20 8l-9 9z'/%3E%3C/svg%3E");
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  flex: 0 1 280px;
+}
+
+.search-box {
+  padding: 8px 15px 8px 35px;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-box:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  min-height: calc(100vh - 100px);
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+/* ================= CREATE POST ================= */
+.create-post {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.create-post textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  min-height: 60px;
+  font-family: inherit;
+}
+
+.post-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.post-options .icons span {
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.post-options button {
+  background: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.post-options button:hover {
+  background: var(--dark-red);
+  transform: translateY(-2px);
+}
+
+/* ================= POSTS ================= */
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: var(--shadow);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-header .user {
+  display: flex;
+  align-items: center;
+}
+
+.post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid var(--medium-gray);
+}
+
+.post-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.verified-badge {
+  color: var(--primary-red);
+  font-size: 14px;
+}
+
+.post-content {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.hashtag {
+  color: var(--primary-red);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+.post-actions {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.sidebar-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-card h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--text-dark);
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.trending li {
+  list-style: none;
+  margin: 10px 0;
+  font-size: 14px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.trending li:hover {
+  background: var(--light-gray);
+  padding-left: 5px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: var(--text-light);
+  font-size: 14px;
+  border-top: 1px solid var(--medium-gray);
+}
+
+
+/* ================= SCROLL FIX ================= */
+html, body {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+/* Allow feed section to expand freely */
+.container {
+  min-height: auto;
+  height: auto;
+  align-items: flex-start;
+}
+
+/* Make sure post list doesn't clip */
+.create-post,
+.post {
+  overflow: visible;
+}
+
+/* Fix if any parent sets hidden overflow */
+#root {
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100vh;
+}

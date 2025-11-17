@@ -1,0 +1,188 @@
+.hackathon-details-page {
+  background: #f5f5f5;
+  min-height: 100vh;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar (reuse consistent style) */
+.hackathon-details-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9534f;
+  padding: 12px 25px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-details-page .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hackathon-details-page .logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.hackathon-details-page .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hackathon-details-page .nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.hackathon-details-page .nav-menu a.active,
+.hackathon-details-page .nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main layout */
+.container {
+  max-width: 1080px;
+  margin: 100px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background: white;
+  border: 2px solid #d9534f;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  padding: 18px;
+  border-top: 1px solid #eee;
+}
+
+.section:first-child {
+  border-top: none;
+}
+
+.h1 {
+  font-size: 28px;
+  color: #222;
+  margin: 0 0 8px;
+}
+
+.h2 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid #d9534f;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 600;
+  background: #fff;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.btn,
+.btn-outline {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #d9534f;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.btn {
+  background: #d9534f;
+  color: white;
+}
+
+.btn:hover {
+  background: #b52a27;
+}
+
+.btn-outline {
+  background: white;
+  color: #d9534f;
+}
+
+.btn-outline:hover {
+  background: #d9534f;
+  color: white;
+}
+
+/* Flyer */
+.flyer-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 80px auto;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .h2 {
+    font-size: 18px;
+  }
+
+  .chip {
+    font-size: 12px;
+  }
+
+  .btn,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

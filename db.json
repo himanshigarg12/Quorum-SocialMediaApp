@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Muskan Gupta",
+      "username": "muskan123",
+      "email": "muskan@chitkara.edu.in",
+      "password": "123456",
+      "bio": "Designer | Open Source Chandigarh",
+      "profilePic": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      "id": 2,
+      "fullname": "Aarav Sharma",
+      "username": "aarav_s",
+      "email": "aarav@chitkara.edu.in",
+      "password": "password",
+      "bio": "Tech Enthusiast | CSE Batch 2025",
+      "profilePic": "https://i.pravatar.cc/150?img=2"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "content": "Welcome to Quorum 🎉 Excited to connect with everyone!",
+      "image": "",
+      "timestamp": "2025-11-10T10:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "content": "Just wrapped up my web dev project 🚀",
+      "image": "",
+      "timestamp": "2025-11-10T11:30:00"
+    }
+  ],
+
+  "likes": [
+    { "id": 1, "postId": 1, "userId": 2 },
+    { "id": 2, "postId": 2, "userId": 1 }
+  ]
+}
+

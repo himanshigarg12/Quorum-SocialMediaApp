@@ -1,0 +1,177 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LAYOUT */
+.login-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT SIDE - Illustration */
+.left-side {
+  flex: 1.2;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* RIGHT SIDE - Login Form */
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40px 60px;
+}
+
+/* LOGIN CARD */
+.login-card {
+  width: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 35px;
+}
+
+/* LOGO + TITLE */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+/* ERROR BOX */
+.error {
+  background: #ffeaea;
+  border: 1px solid #ffb3b3;
+  color: #d9534f;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.error.show {
+  display: block;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: #d9534f;
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.15);
+  outline: none;
+}
+
+.invalid-field {
+  border-color: #d9534f !important;
+}
+
+.valid-field {
+  border-color: #5cb85c !important;
+}
+
+/* FORGOT PASSWORD */
+.forgot {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot a {
+  color: #d9534f;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.sign-in-btn {
+  width: 100%;
+  background: #d9534f;
+  border: none;
+  padding: 12px;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background: #c9302c;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-side {
+    height: 260px;
+    background-size: contain;
+  }
+
+  .right-side {
+    padding: 30px 20px;
+  }
+
+  .login-card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .forgot {
+    text-align: center;
+  }
+}

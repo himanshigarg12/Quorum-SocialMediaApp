@@ -1,0 +1,40 @@
+/* =====================================
+   UNIVERSAL PAGE LAYOUT FIX
+===================================== */
+.page-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* stops outer scroll */
+  background: #f9f9f9;
+}
+
+/* Left panel — fixed 50% width */
+.left-panel {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #d9534f, #d76d77, #d84e4e);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Right panel — fixed 50%, scrolls internally */
+.right-panel {
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  overflow-y: auto;
+  padding: 50px 60px;
+}
+
+.right-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.right-panel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
