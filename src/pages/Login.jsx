@@ -21,7 +21,6 @@ function Login() {
   const setInputStatus = (setter, valid) =>
     setter(valid ? "valid-field" : "invalid-field");
 
-  // ✅ FIXED: Optimized Login Handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     clearError();
@@ -29,7 +28,7 @@ function Login() {
     let valid = true;
     const trimmedEmail = email.trim();
 
-    // Validation checks
+    // Validate Email
     if (trimmedEmail === "") {
       displayError("Email field cannot be empty.");
       setInputStatus(setEmailClass, false);
@@ -40,6 +39,7 @@ function Login() {
       valid = false;
     } else setInputStatus(setEmailClass, true);
 
+    // Validate Password
     if (password === "") {
       if (valid) displayError("Password field cannot be empty.");
       setInputStatus(setPasswordClass, false);
@@ -54,7 +54,6 @@ function Login() {
     if (!valid) return;
 
     try {
-      // ✅ Fetch user by email directly (much cleaner)
       const response = await fetch(
         `http://localhost:5000/users?email=${encodeURIComponent(trimmedEmail)}`
       );
@@ -71,11 +70,13 @@ function Login() {
 
       const user = users[0];
 
-      // ✅ Match password
       if (user.password === password) {
         alert(`Welcome, ${user.fullname}!`);
         localStorage.setItem("currentUser", JSON.stringify(user));
-        navigate("/CreateProfile"); // Changed from CreateProfile → ProfilePage
+
+        if (!user.hasProfile) navigate("/CreateProfile");
+        else navigate("/ProfilePage");
+
       } else {
         displayError("Incorrect password. Please try again.");
         setInputStatus(setPasswordClass, false);
@@ -104,13 +105,11 @@ function Login() {
 
   return (
     <div className="login-page">
-      {/* Left Illustration */}
       <div
         className="left-side"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       ></div>
 
-      {/* Right Login Card */}
       <div className="right-side">
         <div className="login-card">
           <div className="logo">
